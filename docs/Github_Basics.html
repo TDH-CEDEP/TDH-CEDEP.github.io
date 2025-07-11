@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.3.450" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>github_basics</title>
@@ -24,7 +22,22 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -57,8 +70,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Github_Basics.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -68,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
 <h1>Github Basics</h1>
 <p>This section covers the basics of how Github works. There are a lot of resources online that can also help you understand. Github is a website that is based on Git. Git is a common version control software.</p>
 <section id="what-is-git" class="level2">
-<h2>What is Git</h2>
+<h2 class="anchored" data-anchor-id="what-is-git">What is Git</h2>
 <p>Git was developed to track changes in software over time, with multiple people working on the same code at once. You can download Git onto your PC and use it without worrying about Github at all. The diagram below shows how a project is developed using Git version control.</p>
-<p><img src="https://www.nobledesktop.com/image/blog/git-branches-merge.png" class="img-fluid" /></p>
+<p><img src="https://www.nobledesktop.com/image/blog/git-branches-merge.png" class="img-fluid"></p>
 <p>The project starts in an initial state, called the main (sometimes master) branch. In the diagram above, the main branch is colored green. Each circle is the code at a point in time, referred to as a commit. When a change is made to the code, you must choose to commit the change to the version history. You will also be asked to write a short description of what you changed or added. Uncommitted changes are considered staged, since they are waiting to be accepted or rejected.</p>
 <p>For minor fixes, like correcting a typo, you could edit the main branch of code and commit the changes to it directly. But sometimes a change is more involved, and working on it will take time. Furthermore, sometimes you need to make changes to the foundations of a script that render it non-functional, but other people rely on the code to keep running. In this case, Git allows you to create a branch (in blue and orange above). Branches are a copy of the code that is separate from the main, functional code. You can then make edits to your branch without breaking the functional code. When you have finished work on the branch, you can then merge your changes into the main branch. In the diagram above, the blue branch took three commits to finish, whereas the orange commit only took one.</p>
 <p>When making a commit, or merging a branch into main, you will have the opportunity to review the old version of the code and the new version. This is so each change is highlighted and looked over before it is added to the version history. The above process allows for complex projects with several contributors to be developed with a clear history of who did what and when, with the ability to go back to previous versions of the project, if need be.</p>
@@ -88,12 +101,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="what-is-github" class="level2">
-<h2>What is Github</h2>
+<h2 class="anchored" data-anchor-id="what-is-github">What is Github</h2>
 <p>As stated above, you can use Git locally on your own computer. In this case, you are working on a local repository, or a project on your own computer. Github is a remote repository; a place to store the code that is not your own computer. This allows the code, with all its version history, to be available to everyone (a public repo), or github users with certain permissions (a private repo).</p>
 <p>You can take an existing local Git repository and push it up to Github. Most code editors can easily integrate with Git and Github, to facilitate communication between your local repo and Github’s remote repo. After working on some changes to the code and making one or more commits, you can push the changes up to Github (syncing the Github repo to align with your local repo). Conversely, you can pull the current version of the project from the Github repo to your own local repo in order to make changes off of it. This is useful for projects with multiple collaborators. You will typically all use Github as the hub for development; pull down the current version of the project with the most recent changes from others, make and commit your changes locally, then push them back to Github. Then others can do the same.</p>
-<p><img src="local_remote_repo.webp" class="img-fluid" /></p>
+<p><img src="local_remote_repo.webp" class="img-fluid"></p>
 <p>Pulls and pushes happen to branches of a repository, but you should start off by working on a small project with only a main branch. Here is an example of the code review panel in R for a small documentation change:</p>
-<p><img src="images/commit_review_R.png" class="img-fluid" /></p>
+<p><img src="images/commit_review_R.png" class="img-fluid"></p>
 <p>Here are the key terms from the description above:</p>
 <ul>
 <li><p>Local Repo - A group of files and folders that make up a project, stored on your own computer</p></li>
@@ -103,27 +116,27 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="common-elements-of-a-repo" class="level2">
-<h2>Common Elements of a Repo</h2>
+<h2 class="anchored" data-anchor-id="common-elements-of-a-repo">Common Elements of a Repo</h2>
 <p>Many different file types can be placed into a repo, but there are some items which are commonly used to make working with Git/Github easier. None of these are strictly required (except for a license, potentially), but you should use them.</p>
 <section id="readme" class="level3">
-<h3>Readme</h3>
+<h3 class="anchored" data-anchor-id="readme">Readme</h3>
 <p>A file that explains the purpose of the project, and any useful documentation on how to use the code inside. In Github, readme files should be markdown documents (i.e., readme.md). When structured this way, the readme information will be rendered in the Github repo.</p>
 </section>
 <section id="gitignore" class="level3">
-<h3>.gitignore</h3>
+<h3 class="anchored" data-anchor-id="gitignore">.gitignore</h3>
 <p>The .gitignore file allows you to specify files and folders that should not be included in the version control tracking. These files can be housed inside the repo folder, and could be critical to the functioning of the code (e.g., important data for analysis), but changes to these files are not tracked, and they won’t be pushed to Github. Specific files can be listed in the .gitignore, or patterns that exclude multiple items (e.g., all PDFs, all files with “PHI” in the name, all files in a subfolder)</p>
 </section>
 <section id="subfolders" class="level3">
-<h3>Subfolders</h3>
+<h3 class="anchored" data-anchor-id="subfolders">Subfolders</h3>
 <p>The main folder of a repo can store files, but it can also help to organize files into subfolders. Common subfolders are for data, scripts, or images</p>
 </section>
 <section id="license" class="level3">
-<h3>License</h3>
+<h3 class="anchored" data-anchor-id="license">License</h3>
 <p>Since the code put into public repositories can be seen and copied by anyone, you likely need a license that describes how the code can be used by others [what is the TDH default license? Does this need to be mentioned in security?].</p>
 </section>
 </section>
 <section id="credentials" class="level2">
-<h2>Credentials</h2>
+<h2 class="anchored" data-anchor-id="credentials">Credentials</h2>
 <p>You will need to link your computer to your Github account. Options include:</p>
 <ul>
 <li><p>Git terminal</p></li>
@@ -136,17 +149,13 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <p>You should only need to set your credentials once [pending security concerns]. Once set, any commits/pushes/pulls/etc. will include your name, and you will have the ability to access private repositories for your teams.</p>
-<div id="quarto-navigation-envelope" class="hidden">
 
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden" data-render-id="quarto-twittercardtitle"></span> <span class="hidden" data-render-id="quarto-ogcardtitle"></span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
+
 </section>
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -381,6 +390,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+</body></html>
