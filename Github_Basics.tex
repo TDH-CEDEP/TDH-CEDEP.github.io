@@ -1,0 +1,358 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, boxrule=0pt, interior hidden]}{\end{tcolorbox}}\fi
+
+\hypertarget{github-basics}{%
+\chapter{Github Basics}\label{github-basics}}
+
+This section covers the basics of how Github works. There are a lot of
+resources online that can also help you understand. Github is a website
+that is based on Git. Git is a common version control software.
+
+\hypertarget{what-is-git}{%
+\section{What is Git}\label{what-is-git}}
+
+Git was developed to track changes in software over time, with multiple
+people working on the same code at once. You can download Git onto your
+PC and use it without worrying about Github at all. The diagram below
+shows how a project is developed using Git version control.
+
+\includegraphics{Github_Basics_files/mediabag/git-branches-merge.png}
+
+The project starts in an initial state, called the main (sometimes
+master) branch. In the diagram above, the main branch is colored green.
+Each circle is the code at a point in time, referred to as a commit.
+When a change is made to the code, you must choose to commit the change
+to the version history. You will also be asked to write a short
+description of what you changed or added. Uncommitted changes are
+considered staged, since they are waiting to be accepted or rejected.
+
+For minor fixes, like correcting a typo, you could edit the main branch
+of code and commit the changes to it directly. But sometimes a change is
+more involved, and working on it will take time. Furthermore, sometimes
+you need to make changes to the foundations of a script that render it
+non-functional, but other people rely on the code to keep running. In
+this case, Git allows you to create a branch (in blue and orange above).
+Branches are a copy of the code that is separate from the main,
+functional code. You can then make edits to your branch without breaking
+the functional code. When you have finished work on the branch, you can
+then merge your changes into the main branch. In the diagram above, the
+blue branch took three commits to finish, whereas the orange commit only
+took one.
+
+When making a commit, or merging a branch into main, you will have the
+opportunity to review the old version of the code and the new version.
+This is so each change is highlighted and looked over before it is added
+to the version history. The above process allows for complex projects
+with several contributors to be developed with a clear history of who
+did what and when, with the ability to go back to previous versions of
+the project, if need be.
+
+A Git project can consist of one or more files that are located together
+in a folder. This location, and the files in it are known as a
+repository, or repo. All the files and subfolders in the repo are
+included in the project's version control. Git can be used by typing
+commands into a terminal or command prompt, but other tools (Github,
+Rstudio, etc.) provide a user interface that can make getting started
+easier.
+
+Here are the key terms from the description above:
+
+\begin{itemize}
+\item
+  Version control - Tracking, recording, and organizing changes to a
+  project over time
+\item
+  Git - a version control software
+\item
+  Main - The base version of a project
+\item
+  Branch - a copy of the main project, where changes can be made
+\item
+  Staged Change - an edit to a file in a repo that has not been
+  committed
+\item
+  Commit - Officially adding a change to the version history (to the
+  main project, or to a branch)
+\item
+  Merge - Adding changes from a branch back into the main project
+\item
+  Repository - A location that contains the files and folders that make
+  up a project
+\end{itemize}
+
+\hypertarget{what-is-github}{%
+\section{What is Github}\label{what-is-github}}
+
+As stated above, you can use Git locally on your own computer. In this
+case, you are working on a local repository, or a project on your own
+computer. Github is a remote repository; a place to store the code that
+is not your own computer. This allows the code, with all its version
+history, to be available to everyone (a public repo), or github users
+with certain permissions (a private repo).
+
+You can take an existing local Git repository and push it up to Github.
+Most code editors can easily integrate with Git and Github, to
+facilitate communication between your local repo and Github's remote
+repo. After working on some changes to the code and making one or more
+commits, you can push the changes up to Github (syncing the Github repo
+to align with your local repo). Conversely, you can pull the current
+version of the project from the Github repo to your own local repo in
+order to make changes off of it. This is useful for projects with
+multiple collaborators. You will typically all use Github as the hub for
+development; pull down the current version of the project with the most
+recent changes from others, make and commit your changes locally, then
+push them back to Github. Then others can do the same.
+
+\includegraphics{local_remote_repo.webp}
+
+Pulls and pushes happen to branches of a repository, but you should
+start off by working on a small project with only a main branch. Here is
+an example of the code review panel in R for a small documentation
+change:
+
+\includegraphics{images/commit_review_R.png}
+
+Here are the key terms from the description above:
+
+\begin{itemize}
+\item
+  Local Repo - A group of files and folders that make up a project,
+  stored on your own computer
+\item
+  Remote Repo - A repo stored on a remote server, like Github
+\item
+  Pull - Copying a remote repo from Github to a local repo on your
+  machine
+\item
+  Push - Updating a remote Github repo to reflect commits made to your
+  local repo
+\end{itemize}
+
+\hypertarget{common-elements-of-a-repo}{%
+\section{Common Elements of a Repo}\label{common-elements-of-a-repo}}
+
+Many different file types can be placed into a repo, but there are some
+items which are commonly used to make working with Git/Github easier.
+None of these are strictly required (except for a license, potentially),
+but you should use them.
+
+\hypertarget{readme}{%
+\subsection{Readme}\label{readme}}
+
+A file that explains the purpose of the project, and any useful
+documentation on how to use the code inside. In Github, readme files
+should be markdown documents (i.e., readme.md). When structured this
+way, the readme information will be rendered in the Github repo.
+
+\hypertarget{gitignore}{%
+\subsection{.gitignore}\label{gitignore}}
+
+The .gitignore file allows you to specify files and folders that should
+not be included in the version control tracking. These files can be
+housed inside the repo folder, and could be critical to the functioning
+of the code (e.g., important data for analysis), but changes to these
+files are not tracked, and they won't be pushed to Github. Specific
+files can be listed in the .gitignore, or patterns that exclude multiple
+items (e.g., all PDFs, all files with ``PHI'' in the name, all files in
+a subfolder)
+
+\hypertarget{subfolders}{%
+\subsection{Subfolders}\label{subfolders}}
+
+The main folder of a repo can store files, but it can also help to
+organize files into subfolders. Common subfolders are for data, scripts,
+or images
+
+\hypertarget{license}{%
+\subsection{License}\label{license}}
+
+Since the code put into public repositories can be seen and copied by
+anyone, you likely need a license that describes how the code can be
+used by others {[}what is the TDH default license? Does this need to be
+mentioned in security?{]}.
+
+\hypertarget{credentials}{%
+\section{Credentials}\label{credentials}}
+
+You will need to link your computer to your Github account. Options
+include:
+
+\begin{itemize}
+\item
+  Git terminal
+\item
+  Git UI {[}maybe?{]}
+\item
+  IDE capabilities
+
+  \begin{itemize}
+  \item
+    RStudio -
+    \url{https://usethis.r-lib.org/articles/git-credentials.html}
+  \item
+    SAS -
+    \url{https://communities.sas.com/t5/SAS-Communities-Library/How-to-connect-SAS-to-your-Git-profile/ta-p/772570}
+  \item
+    VSCode
+  \end{itemize}
+\end{itemize}
+
+You should only need to set your credentials once {[}pending security
+concerns{]}. Once set, any commits/pushes/pulls/etc. will include your
+name, and you will have the ability to access private repositories for
+your teams.
+
+
+
+\end{document}

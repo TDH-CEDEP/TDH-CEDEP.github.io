@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+book:
+  title: "Github Basics"
+  author: "Greg Chambers"
+  date: "6/30/2025"
+  chapters:
+    - index.qmd
+    - Data_Security.qmd
+    - Github_Basics.qmd
+    - Extra_Resources.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

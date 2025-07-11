@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.3.450" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+
+<title>github_basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="github-basics" class="level1">
+<h1>Github Basics</h1>
+<p>This section covers the basics of how Github works. There are a lot of resources online that can also help you understand. Github is a website that is based on Git. Git is a common version control software.</p>
+<section id="what-is-git" class="level2">
+<h2>What is Git</h2>
+<p>Git was developed to track changes in software over time, with multiple people working on the same code at once. You can download Git onto your PC and use it without worrying about Github at all. The diagram below shows how a project is developed using Git version control.</p>
+<p><img src="https://www.nobledesktop.com/image/blog/git-branches-merge.png" class="img-fluid" /></p>
+<p>The project starts in an initial state, called the main (sometimes master) branch. In the diagram above, the main branch is colored green. Each circle is the code at a point in time, referred to as a commit. When a change is made to the code, you must choose to commit the change to the version history. You will also be asked to write a short description of what you changed or added. Uncommitted changes are considered staged, since they are waiting to be accepted or rejected.</p>
+<p>For minor fixes, like correcting a typo, you could edit the main branch of code and commit the changes to it directly. But sometimes a change is more involved, and working on it will take time. Furthermore, sometimes you need to make changes to the foundations of a script that render it non-functional, but other people rely on the code to keep running. In this case, Git allows you to create a branch (in blue and orange above). Branches are a copy of the code that is separate from the main, functional code. You can then make edits to your branch without breaking the functional code. When you have finished work on the branch, you can then merge your changes into the main branch. In the diagram above, the blue branch took three commits to finish, whereas the orange commit only took one.</p>
+<p>When making a commit, or merging a branch into main, you will have the opportunity to review the old version of the code and the new version. This is so each change is highlighted and looked over before it is added to the version history. The above process allows for complex projects with several contributors to be developed with a clear history of who did what and when, with the ability to go back to previous versions of the project, if need be.</p>
+<p>A Git project can consist of one or more files that are located together in a folder. This location, and the files in it are known as a repository, or repo. All the files and subfolders in the repo are included in the project’s version control. Git can be used by typing commands into a terminal or command prompt, but other tools (Github, Rstudio, etc.) provide a user interface that can make getting started easier.</p>
+<p>Here are the key terms from the description above:</p>
+<ul>
+<li><p>Version control - Tracking, recording, and organizing changes to a project over time</p></li>
+<li><p>Git - a version control software</p></li>
+<li><p>Main - The base version of a project</p></li>
+<li><p>Branch - a copy of the main project, where changes can be made</p></li>
+<li><p>Staged Change - an edit to a file in a repo that has not been committed</p></li>
+<li><p>Commit - Officially adding a change to the version history (to the main project, or to a branch)</p></li>
+<li><p>Merge - Adding changes from a branch back into the main project</p></li>
+<li><p>Repository - A location that contains the files and folders that make up a project</p></li>
+</ul>
+</section>
+<section id="what-is-github" class="level2">
+<h2>What is Github</h2>
+<p>As stated above, you can use Git locally on your own computer. In this case, you are working on a local repository, or a project on your own computer. Github is a remote repository; a place to store the code that is not your own computer. This allows the code, with all its version history, to be available to everyone (a public repo), or github users with certain permissions (a private repo).</p>
+<p>You can take an existing local Git repository and push it up to Github. Most code editors can easily integrate with Git and Github, to facilitate communication between your local repo and Github’s remote repo. After working on some changes to the code and making one or more commits, you can push the changes up to Github (syncing the Github repo to align with your local repo). Conversely, you can pull the current version of the project from the Github repo to your own local repo in order to make changes off of it. This is useful for projects with multiple collaborators. You will typically all use Github as the hub for development; pull down the current version of the project with the most recent changes from others, make and commit your changes locally, then push them back to Github. Then others can do the same.</p>
+<p><img src="local_remote_repo.webp" class="img-fluid" /></p>
+<p>Pulls and pushes happen to branches of a repository, but you should start off by working on a small project with only a main branch. Here is an example of the code review panel in R for a small documentation change:</p>
+<p><img src="images/commit_review_R.png" class="img-fluid" /></p>
+<p>Here are the key terms from the description above:</p>
+<ul>
+<li><p>Local Repo - A group of files and folders that make up a project, stored on your own computer</p></li>
+<li><p>Remote Repo - A repo stored on a remote server, like Github</p></li>
+<li><p>Pull - Copying a remote repo from Github to a local repo on your machine</p></li>
+<li><p>Push - Updating a remote Github repo to reflect commits made to your local repo</p></li>
+</ul>
+</section>
+<section id="common-elements-of-a-repo" class="level2">
+<h2>Common Elements of a Repo</h2>
+<p>Many different file types can be placed into a repo, but there are some items which are commonly used to make working with Git/Github easier. None of these are strictly required (except for a license, potentially), but you should use them.</p>
+<section id="readme" class="level3">
+<h3>Readme</h3>
+<p>A file that explains the purpose of the project, and any useful documentation on how to use the code inside. In Github, readme files should be markdown documents (i.e., readme.md). When structured this way, the readme information will be rendered in the Github repo.</p>
+</section>
+<section id="gitignore" class="level3">
+<h3>.gitignore</h3>
+<p>The .gitignore file allows you to specify files and folders that should not be included in the version control tracking. These files can be housed inside the repo folder, and could be critical to the functioning of the code (e.g., important data for analysis), but changes to these files are not tracked, and they won’t be pushed to Github. Specific files can be listed in the .gitignore, or patterns that exclude multiple items (e.g., all PDFs, all files with “PHI” in the name, all files in a subfolder)</p>
+</section>
+<section id="subfolders" class="level3">
+<h3>Subfolders</h3>
+<p>The main folder of a repo can store files, but it can also help to organize files into subfolders. Common subfolders are for data, scripts, or images</p>
+</section>
+<section id="license" class="level3">
+<h3>License</h3>
+<p>Since the code put into public repositories can be seen and copied by anyone, you likely need a license that describes how the code can be used by others [what is the TDH default license? Does this need to be mentioned in security?].</p>
+</section>
+</section>
+<section id="credentials" class="level2">
+<h2>Credentials</h2>
+<p>You will need to link your computer to your Github account. Options include:</p>
+<ul>
+<li><p>Git terminal</p></li>
+<li><p>Git UI [maybe?]</p></li>
+<li><p>IDE capabilities</p>
+<ul>
+<li><p>RStudio - <a href="https://usethis.r-lib.org/articles/git-credentials.html" class="uri">https://usethis.r-lib.org/articles/git-credentials.html</a></p></li>
+<li><p>SAS - <a href="https://communities.sas.com/t5/SAS-Communities-Library/How-to-connect-SAS-to-your-Git-profile/ta-p/772570" class="uri">https://communities.sas.com/t5/SAS-Communities-Library/How-to-connect-SAS-to-your-Git-profile/ta-p/772570</a></p></li>
+<li><p>VSCode</p></li>
+</ul></li>
+</ul>
+<p>You should only need to set your credentials once [pending security concerns]. Once set, any commits/pushes/pulls/etc. will include your name, and you will have the ability to access private repositories for your teams.</p>
+<div id="quarto-navigation-envelope" class="hidden">
+
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-twittercardtitle"></span> <span class="hidden" data-render-id="quarto-ogcardtitle"></span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id = "quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+</body>
+
+</html>

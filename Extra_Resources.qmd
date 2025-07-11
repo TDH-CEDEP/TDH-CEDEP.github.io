@@ -1,0 +1,19 @@
+# Extra Resources
+
+## Other Github Summaries
+
+-   <https://www.coursera.org/articles/what-is-git>
+
+-   <https://digital.gov/resources/an-introduction-github>
+
+## RStudio Integration
+
+-   <https://happygitwithr.com/rstudio-git-github.html>
+
+-   <https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r>
+
+-   <https://www.epirhandbook.com/en/new_pages/collaboration.html>
+
+## SAS Integration
+
+-   <https://documentation.sas.com/doc/en/egug/8.3/p078cl08fol7hkn11a8nf1f9izq7.htm>
